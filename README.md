@@ -1,2 +1,5 @@
 # HTML_CSS_JS_WebSite
- My attempt to get started with basic web dev using HTML, CSS, and Javascript. This project is to help me get used to working with HTML and CSS while being an introduction for Javascript for me!
+ My attempt to get started with basic web dev using HTML, CSS, and Javascript. 
+ This project is to help me get used to working with HTML and CSS while being an introduction for Javascript for me! <br />
+ 
+ This project is based on 'The Road' project from lashaNoz on Github, it's not meant to be public but to help me learn web dev as well as to use it as a reference guide for my future projects!<br />
