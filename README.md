@@ -3,3 +3,4 @@
  This project is to help me get used to working with HTML and CSS while being an introduction for Javascript for me! <br />
  
  This project is based on 'The Road' project from lashaNoz on Github, it's not meant to be public but to help me learn web dev as well as to use it as a reference guide for my future projects!<br />
+ lashaNoz's project can be found here: https://github.com/lashaNoz/The-Road/tree/Final <br/>
