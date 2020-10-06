@@ -42,6 +42,138 @@ html {
 
 /* End of Common Styles */
 
+/* NavBar */  
+
+.navbar-icon {
+    width: 5.5rem;
+    height: 5.5rem;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.navbar-icon .line {
+    height: 0.2rem;
+    width: 3.5rem;
+    background-color: var(--light-grey-color);
+}
+
+/* seperate 3 lines in open-navbar icon */
+.open-navbar-icon .line {
+    margin: 0.3rem 0;
+}
+
+.open-navbar-icon {
+    position: fixed;
+    top: 6.5rem;
+    left: 6.5rem;
+    z-index: 200;
+}
+
+.navbar-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: fixed;
+    left: 0;
+    bottom: -100%;
+    opacity: 0;
+    z-index: 300;
+    padding: 3.5rem 5.5rem 3.5rem 3.5rem;
+    transition: bottom 0.5s, opacity 0.2s;
+}
+
+/* adding change via JS will modify all functions connected to .change functions, this plus nav-link one too */
+.change .navbar-wrapper {
+    bottom: 0;
+    opacity: 1;
+    transition: bottom 0.5s, opacity 0.2s 0.25s;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(images/navbar-bg.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+    /* the following stops the navbar from overlapping the entire stie when closed */
+    overflow-y: hidden;
+}
+
+.close-navbar-icon {
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
+    z-index: 300;
+}
+
+.close-navbar-icon .line {
+    position: absolute;
+}
+
+/* make close button with 2 lines on the close navbar icon */
+.line-1 {
+    transform: rotate(40deg);
+}
+
+.line-2 {
+    transform: rotate(-40deg);
+}
+
+.nav-list {
+    height: 100%;
+    display: flex;
+
+}
+
+.nav-link {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white-color);
+    text-transform: uppercase;
+    width: 100%;
+    opacity: 0.8;
+    position: relative;
+    top: -100%;
+    /* slows color change on hover to 0.3s */
+    transition: all 0.3s;
+}
+
+/* removing change via JS will unmodify all functions connected to .change functions, this plus navbar-wrapper one too */
+.change .nav-link {
+    top: 0;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+/* slow transition for each of the nav-link children */
+/* second var for top is the time it takes to drop the child into view */
+.change .nav-link:nth-child(1) {
+    transition: top 1s 0.4s, opacity 0.3s, color 0.3s;
+}
+
+.change .nav-link:nth-child(2) {
+    transition: top 1s 0.6s, opacity 0.3s, color 0.3s;
+}
+
+.change .nav-link:nth-child(3) {
+    transition: top 1s 0.8s, opacity 0.3s, color 0.3s;
+}
+
+.change .nav-link:nth-child(4) {
+    transition: top 1s 1s, opacity 0.3s, color 0.3s;
+}
+
+.change .nav-link:nth-child(5) {
+    transition: top 1s 1.2s, opacity 0.3s, color 0.3s;
+}
+
+/* End of NavBar */
+
 /* Header Style: */
 
 /* for header class div only */
@@ -107,7 +239,7 @@ html {
     animation-delay: .1s;
     animation-iteration-count: infinite; ( animation is repeated x number of times )
     */
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0s infinite;
 }
 
 /* Repeat the above for each of the 7 remaining letters of logo */
@@ -116,46 +248,46 @@ html {
 }
 
 .logo h1 span:nth-child(3) {
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0.2s infinite;
 }
 
 .logo h1 span:nth-child(4) {
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0.3s infinite;
 }
 
 .logo h1 span:nth-child(5) {
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0.4s infinite;
 }
 
 .logo h1 span:nth-child(6) {
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0.5s infinite;
 }
 
 .logo h1 span:nth-child(7) {
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0.6s infinite;
 }
 
 .logo h1 span:nth-child(8) {
-    animation: drop-letters 5s 0.1s infinite;
+    animation: drop-letters 5s 0.7s infinite;
 }
 
 /* keyframes: used for specific animation code */
 @keyframes drop-letters {
     /* 0% is start of animation, 100% is the end */
     0% {
-        transform: translate(0);
+        transform: translateY(0);
     }
     10% {
-        transform: translate(0);
+        transform: translateY(0);
     }
     15% {
-        transform: translate(-100%);
+        transform: translateY(-100%);
     }
     20% {
-        transform: translate(0);
+        transform: translateY(0);
     }
     100% {
-        transform: translate(0);
+        transform: translateY(0);
     }
 }
  /* shrink animated balloon for animation start point */
@@ -523,3 +655,213 @@ html {
 }
 
 /* End of Contact */
+
+/* Footer */
+
+.footer {
+    background-color: var(--grey-color);
+    padding: 4rem 0 2rem 0;
+}
+
+.footer-list {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-link {
+    font-size: 2rem;
+    color: var(--white-color);
+    margin: 0.2rem;
+    background-color: var(--grey-color);
+    padding: 0.3rem 3rem;
+    letter-spacing: 0.3rem;
+    transition: all 0.2s;
+}
+
+/* when hovering over the footer links */
+.footer-link:hover {
+    transform: rotate(-10deg);
+    box-shadow: 0 2rem 3rem #000;
+}
+
+.footer-paragraph {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    letter-spacing: 0.2rem;
+    margin-top: 5rem;
+}
+
+/* End of Footer */
+
+/* responsiveness */  
+
+/* when the site is displayed on a screen with a width of 1200 px at most: */
+@media(max-width: 1200px) {
+
+    /* makes the cards align vertically when the width is too small */
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* gives cards some spacing */
+    .card {
+        margin: 3rem 0;
+    }
+
+    /* shrink video BG */
+    .story-bg {
+        width: 85%;
+    }
+
+}
+
+/* further modifications when the width is 1000px */
+@media (max-width:1000px) {
+
+    /* makes navbar drop downs horizontal instead of verticle drops */
+    .nav-list {
+        flex-direction: column;
+    }
+
+    /* will make the drop down use all available space */
+    .nav-link {
+        flex-grow: 1;
+    }
+
+    /* moves header text closer to center */
+    .header-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+
+    /* make the font smaller */
+    .heading {
+        font-size: 6rem;
+    }
+
+    .header-paragraph {
+        font-size: 2.5rem;
+    }
+
+    .popular-tours-heading {
+        font-size: 6rem;
+    }
+
+    /* condense story-bg for text and make them squares */
+    .story-bg {
+        transform: skewX(0);
+    }
+
+    .story {
+        transform: skewX(0);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* make space btw image and story text */
+    .story-image {
+        margin-bottom: 3rem;
+    }
+
+    .footer-link {
+        padding: 0.3rem 2rem;
+        margin: 0 1rem;
+    }
+
+}
+
+/* further modifications when the width is 800px */
+@media (max-width:800px) {
+
+    /* hide header paragraph */
+    .header-paragraph {
+        display: none;
+    }
+
+    .popular-tours-heading {
+        font-size: 5rem;
+    }
+
+    /* decrease width for contact and footer sections */
+    .contact-form {
+        width: 80%;
+    }
+
+    /* align footer items vertically */
+    .footer-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-link {
+        margin: 1rem 0;
+    }
+
+}
+
+/* further modifications when the width is 600px */
+@media (max-width:600px) {
+
+    /* remove edges */
+    .container {
+        margin: 0;
+    }
+
+    /* change navbar icon position */
+    .open-navbar-icon {
+        top: 2.5rem;
+        left: 2.5rem;
+    }
+
+    /* remove edges in navbar-wrapper itself */
+    .navbar-wrapper {
+        padding: 0;
+    }
+
+    /* re-position close-navbar icon */
+    .close-navbar-icon {
+        right: 4rem;
+    }
+
+    /* make header longer vertically */
+    .header {
+        height: 100vh;
+    }
+
+    .contact-heading {
+        font-size: 6rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+        height: 40rem;
+    }
+
+}
+
+/* further modifications when the width is 500px */
+@media (max-width:500px) {
+
+    /* decrease font size of all html elements */
+    html {
+        font-size: 45%;
+    }
+
+}
+
+/* final modification when the width is 350px */
+@media (max-width:350px) {
+
+    /* decrease font size of all html elements */
+    html {
+        font-size: 25%;
+    }
+
+}
+
+/* end of responsivness */
